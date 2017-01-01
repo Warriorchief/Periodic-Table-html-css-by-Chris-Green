@@ -1,0 +1,220 @@
+
+/*CSS RESET*/
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+.wrapper{
+  width: 1400px;
+  height:800px;;
+  background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
+  border:2px solid darkblue;
+  margin-left:1%;
+  margin-top:1%;
+  padding-left:5px;
+  padding-top:5px;
+  padding-bottom:5px;
+  color: white;
+}
+.row{
+  height:9.20%;
+  margin-bottom:2px;
+  /*border: 1px solid green;*/
+}
+#row8{
+  margin-bottom:40px;
+  height:9.20%;
+  /*border: 1px solid green;*/
+}
+.block{
+  /*border: 1px solid red;*/
+  display:inline-block;
+  width: 4.87%;
+  height:100%;
+}
+#block3{
+  display:inline-block;
+  width: 4.87%;
+  margin-right:28px;
+  height:100%;
+  /*border: 1px solid red;*/
+}
+.element{
+  width:100%;
+  height:100%;
+  border: 2px solid darkblue;
+  text-align: center;
+  /*background-color: lightgreen;*/
+  color:darkblue;
+}
+
+.Alkali_Metal{
+  background: linear-gradient(to bottom, rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%);
+}
+.Alkaline_Earth{
+  background: linear-gradient(to bottom, rgba(255,168,76,1) 0%,rgba(255,123,13,1) 100%);
+}
+.Transition_Metal{
+  background: linear-gradient(to bottom, rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%);
+}
+.Semimetal{
+  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%);
+}
+.Basic_Metal{
+  background: linear-gradient(to bottom, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%);
+}
+.Nonmetal{
+  background: linear-gradient(to bottom, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+}
+.Halogen{
+  background: linear-gradient(to bottom, rgba(251,131,250,1) 0%,rgba(233,60,236,1) 100%);
+}
+.Noble_Gas{
+  background: linear-gradient(to bottom, rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+}
+.Rare_Earth{
+  background: linear-gradient(to bottom, rgba(252,236,252,1) 0%,rgba(251,166,225,1) 50%,rgba(253,137,215,1) 51%,rgba(255,124,216,1) 100%);
+}
+
+.atomic_num{
+  text-align: right;
+  width: 100%;
+  height: 9px;
+  font-size: 12px;
+  padding-right: 5px;
+  padding-top:5px;
+}
+.atomic_symbol{
+  height: 33px;
+  width: 100%;
+  font-size: 37px;
+  margin-bottom: 16px;
+}
+.atomic_name_weight{
+  height: 17px;
+  width: 100%;
+  font-size: 9px;
+  /*border: 1px solid green;*/
+  bottom: 1;
+  margin-bottom: 7px;
+  position: relative;
+  bottom: 10px;
+}
+.group_label{
+  text-align: center;
+  position: relative;
+  bottom: -15px;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.period_label{
+  text-align: center;
+  position: relative;
+  bottom: 35px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+#group_period_block{
+  text-align: center;
+  position: relative;
+  bottom: -15px;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+#lanthanoids{
+  height: 20px;
+  width:150px;
+  position: relative; bottom:124px; left:100px;
+  font-size: 17px;
+  color: white;
+  font-family: cursive;
+  text-align:center;
+}
+#actinoids{
+  height: 20px;
+  width:150px;
+  position: relative; bottom:70px; left:100px;
+  font-size: 17px;
+  font-family: cursive;
+  color: white;
+  text-align:center;
+}
+#tag{
+  height: 6px;
+  width: 100px;
+  position: relative;
+  bottom: 38px;
+  left: 1310px;
+  font-size: 7px;
+  font-size: 5px;
+  color: black;
+  text-align: center;
+}
+#headline{
+  width: 400px;
+  height: 150px;
+  font-family: cursive;
+  font-weight: bold;
+  /* border: 2px solid black; */
+  font-size: 60px;
+  text-align: center;
+  position: relative;
+  bottom: 700px;
+  left: 480px;
+  color: black;
+  line-height: 62px;
+}
+.key{
+  height: 207px;
+  width: 192px;
+  border: 6px solid darkblue;
+  position: relative; bottom: 920px; left: 260px;
+  text-align:center;
+  color:darkblue;
+  background-color: white;
+}
+#example_atomic_num{
+  text-align: right;
+  width: 100%;
+  height: 27px;
+  font-size: 36px;
+  padding-right: 5px;
+}
+#example_atomic_symbol{
+  height: 99px;
+  width: 100%;
+  font-size: 111px;
+  margin-bottom: 48px;
+}
+#example_atomic_name_weight{
+  height: 51px;
+  width: 100%;
+  font-size: 27px;
+  /*border: 1px solid green;*/
+  margin-bottom: 21px;
+  position: relative; bottom: 3px;
+  bottom: 40px;
+}
+.color_guide{
+  width: 900px;
+  height: 50px;
+  border: 0px solid black;
+  position: relative;
+  bottom: 1100px;
+  left: 470px;
+  font-size: 10px;
+}
+.color_guide *{
+  font-size:12px;
+  display:inline-block;
+  width:90px;
+  height:14px;
+  text-align:center;
+  font-weight:bold;
+  color: black;
+  padding-top:
+}
