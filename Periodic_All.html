@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Periodic_Table</title>
+        <!-- <link href="Periodic_Table.css" rel="stylesheet" type="text/css"/> -->
+        <style>
+        /*CSS RESET*/
+        * {
+          padding:0;
+          margin:0;
+          box-sizing: border-box;
+        }
+        .wrapper{
+          width: 1400px;
+          height:800px;;
+          background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
+          border:2px solid darkblue;
+          margin-left:1%;
+          margin-top:1%;
+          padding-left:5px;
+          padding-top:5px;
+          padding-bottom:5px;
+          color: white;
+        }
+        .row{
+          height:9.20%;
+          margin-bottom:2px;
+          /*border: 1px solid green;*/
+        }
+        #row8{
+          margin-bottom:40px;
+          height:9.20%;
+          /*border: 1px solid green;*/
+        }
+        .block{
+          /*border: 1px solid red;*/
+          display:inline-block;
+          width: 4.87%;
+          height:100%;
+        }
+        #block3{
+          display:inline-block;
+          width: 4.87%;
+          margin-right:28px;
+          height:100%;
+          /*border: 1px solid red;*/
+        }
+        .element{
+          width:100%;
+          height:100%;
+          border: 2px solid darkblue;
+          text-align: center;
+          /*background-color: lightgreen;*/
+          color:darkblue;
+        }
+
+        .Alkali_Metal{
+          background: linear-gradient(to bottom, rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%);
+        }
+        .Alkaline_Earth{
+          background: linear-gradient(to bottom, rgba(255,168,76,1) 0%,rgba(255,123,13,1) 100%);
+        }
+        .Transition_Metal{
+          background: linear-gradient(to bottom, rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%);
+        }
+        .Semimetal{
+          background: linear-gradient(to bottom, rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%);
+        }
+        .Basic_Metal{
+          background: linear-gradient(to bottom, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%);
+        }
+        .Nonmetal{
+          background: linear-gradient(to bottom, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+        }
+        .Halogen{
+          background: linear-gradient(to bottom, rgba(251,131,250,1) 0%,rgba(233,60,236,1) 100%);
+        }
+        .Noble_Gas{
+          background: linear-gradient(to bottom, rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+        }
+        .Rare_Earth{
+          background: linear-gradient(to bottom, rgba(252,236,252,1) 0%,rgba(251,166,225,1) 50%,rgba(253,137,215,1) 51%,rgba(255,124,216,1) 100%);
+        }
+
+        .atomic_num{
+          text-align: right;
+          width: 100%;
+          height: 9px;
+          font-size: 12px;
+          padding-right: 5px;
+          padding-top:5px;
+        }
+        .atomic_symbol{
+          height: 33px;
+          width: 100%;
+          font-size: 37px;
+          margin-bottom: 16px;
+        }
+        .atomic_name_weight{
+          height: 17px;
+          width: 100%;
+          font-size: 9px;
+          /*border: 1px solid green;*/
+          bottom: 1;
+          margin-bottom: 7px;
+          position: relative;
+          bottom: 10px;
+        }
+        .group_label{
+          text-align: center;
+          position: relative;
+          bottom: -15px;
+          color: red;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .period_label{
+          text-align: center;
+          position: relative;
+          bottom: 35px;
+          color: red;
+          font-weight: bold;
+          font-size: 15px;
+        }
+        #group_period_block{
+          text-align: center;
+          position: relative;
+          bottom: -15px;
+          color: red;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        #lanthanoids{
+          height: 20px;
+          width:150px;
+          position: relative; bottom:124px; left:100px;
+          font-size: 17px;
+          color: white;
+          font-family: cursive;
+          text-align:center;
+        }
+        #actinoids{
+          height: 20px;
+          width:150px;
+          position: relative; bottom:70px; left:100px;
+          font-size: 17px;
+          font-family: cursive;
+          color: white;
+          text-align:center;
+        }
+        #tag{
+          height: 6px;
+          width: 100px;
+          position: relative;
+          bottom: 38px;
+          left: 1310px;
+          font-size: 7px;
+          font-size: 5px;
+          color: black;
+          text-align: center;
+        }
+        #headline{
+          width: 400px;
+          height: 150px;
+          font-family: cursive;
+          font-weight: bold;
+          /* border: 2px solid black; */
+          font-size: 60px;
+          text-align: center;
+          position: relative;
+          bottom: 700px;
+          left: 480px;
+          color: black;
+          line-height: 62px;
+        }
+        .key{
+          height: 207px;
+          width: 192px;
+          border: 6px solid darkblue;
+          position: relative; bottom: 920px; left: 260px;
+          text-align:center;
+          color:darkblue;
+          background-color: white;
+        }
+        #example_atomic_num{
+          text-align: right;
+          width: 100%;
+          height: 27px;
+          font-size: 36px;
+          padding-right: 5px;
+        }
+        #example_atomic_symbol{
+          height: 99px;
+          width: 100%;
+          font-size: 111px;
+          margin-bottom: 48px;
+        }
+        #example_atomic_name_weight{
+          height: 51px;
+          width: 100%;
+          font-size: 27px;
+          /*border: 1px solid green;*/
+          margin-bottom: 21px;
+          position: relative; bottom: 3px;
+          bottom: 40px;
+        }
+        .color_guide{
+          width: 900px;
+          height: 50px;
+          border: 0px solid black;
+          position: relative;
+          bottom: 1100px;
+          left: 470px;
+          font-size: 10px;
+        }
+        .color_guide *{
+          font-size:12px;
+          display:inline-block;
+          width:90px;
+          height:14px;
+          text-align:center;
+          font-weight:bold;
+          color: black;
+          padding-top:
+        }
+        </style>
+        <!-- <script src="https://code.jquery.com/jquery-3.1.1.js"></script> -->
+    </head>
+    <body>
+      <div class = "wrapper">
+        <div class="row">
+          <div class = "block"><div id="group_period_block">Group:</div></div>
+          <div class = "block"><div class="group_label">1</div></div>
+          <div id = "block3"><div class="group_label">2</div></div>
+          <div class = "block"><div class="group_label">3</div></div>
+          <div class = "block"><div class="group_label">4</div></div>
+          <div class = "block"><div class="group_label">5</div></div>
+          <div class = "block"><div class="group_label">6</div></div>
+          <div class = "block"><div class="group_label">7</div></div>
+          <div class = "block"><div class="group_label">8</div></div>
+          <div class = "block"><div class="group_label">9</div></div>
+          <div class = "block"><div class="group_label">10</div></div>
+          <div class = "block"><div class="group_label">11</div></div>
+          <div class = "block"><div class="group_label">12</div></div>
+          <div class = "block"><div class="group_label">13</div></div>
+          <div class = "block"><div class="group_label">14</div></div>
+          <div class = "block"><div class="group_label">15</div></div>
+          <div class = "block"><div class="group_label">16</div></div>
+          <div class = "block"><div class="group_label">17</div></div>
+          <div class = "block"><div class="group_label">18</div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period1</div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">1</div><div class="atomic_symbol">H</div><div class="atomic_name_weight">hydrogen<br>1.008</div></div></div>
+          <div id = "block3"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">2</div><div class="atomic_symbol">He</div><div class="atomic_name_weight">helium<br>4.0026</div></div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period2</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">3</div><div class="atomic_symbol">Li</div><div class="atomic_name_weight">lithium<br>6.941</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">4</div><div class="atomic_symbol">Be</div><div class="atomic_name_weight">beryllium<br>9.0122</div></div></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">5</div><div class="atomic_symbol">B</div><div class="atomic_name_weight">boron<br>10.811</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">6</div><div class="atomic_symbol">C</div><div class="atomic_name_weight">carbon<br>12.0107</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">7</div><div class="atomic_symbol">N</div><div class="atomic_name_weight">nitrogen<br>14.0067</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">8</div><div class="atomic_symbol">O</div><div class="atomic_name_weight">oxygen<br>15.9994</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">9</div><div class="atomic_symbol">F</div><div class="atomic_name_weight">fluorine<br>18.9984</div></div></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">10</div><div class="atomic_symbol">Ne</div><div class="atomic_name_weight">neon<br>20.1797</div></div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period3</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">11</div><div class="atomic_symbol">Na</div><div class="atomic_name_weight">sodium<br>22.9897</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">12</div><div class="atomic_symbol">Mg</div><div class="atomic_name_weight">magnesium<br>24.305</div></div></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">13</div><div class="atomic_symbol">Al</div><div class="atomic_name_weight">aluminum<br>26.9815</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">14</div><div class="atomic_symbol">Si</div><div class="atomic_name_weight">silicon<br>28.0855</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">15</div><div class="atomic_symbol">P</div><div class="atomic_name_weight">phosphorous<br>30.9738</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">16</div><div class="atomic_symbol">S</div><div class="atomic_name_weight">sulfur<br>32.065</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">17</div><div class="atomic_symbol">Cl</div><div class="atomic_name_weight">chlorine<br>35.453</div></div></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">18</div><div class="atomic_symbol">Ar</div><div class="atomic_name_weight">argon<br>39.948</div></div></div>
+
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period4</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">19</div><div class="atomic_symbol">K</div><div class="atomic_name_weight">potassium<br>39.0983</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">20</div><div class="atomic_symbol">Ca</div><div class="atomic_name_weight">calcium<br>40.078</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">21</div><div class="atomic_symbol">Sc</div><div class="atomic_name_weight">scandium<br>44.9559</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">22</div><div class="atomic_symbol">Ti</div><div class="atomic_name_weight">titanium<br>47.88</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">23</div><div class="atomic_symbol">V</div><div class="atomic_name_weight">vanadium<br>50.9415</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">24</div><div class="atomic_symbol">Cr</div><div class="atomic_name_weight">chromium<br>51.9961</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">25</div><div class="atomic_symbol">Mn</div><div class="atomic_name_weight">manganese<br>54.938</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">26</div><div class="atomic_symbol">Fe</div><div class="atomic_name_weight">iron<br>55.847</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">27</div><div class="atomic_symbol">Co</div><div class="atomic_name_weight">cobalt<br>58.9332</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">28</div><div class="atomic_symbol">Ni</div><div class="atomic_name_weight">nickel<br>58.6934</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">29</div><div class="atomic_symbol">Cu</div><div class="atomic_name_weight">copper<br>63.546</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">30</div><div class="atomic_symbol">Zn</div><div class="atomic_name_weight">zinc<br>65.39</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">31</div><div class="atomic_symbol">Ga</div><div class="atomic_name_weight">gallium<br>69.723</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">32</div><div class="atomic_symbol">Ge</div><div class="atomic_name_weight">germanium<br>72.64</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">33</div><div class="atomic_symbol">As</div><div class="atomic_name_weight">arsenic<br>74.9216</div></div></div>
+          <div class = "block"><div class="element Nonmetal"><div class="atomic_num">34</div><div class="atomic_symbol">Se</div><div class="atomic_name_weight">selenium<br>78.96</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">35</div><div class="atomic_symbol">Br</div><div class="atomic_name_weight">bromine<br>79.904</div></div></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">36</div><div class="atomic_symbol">Kr</div><div class="atomic_name_weight">krypton<br>83.8</div></div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period5</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">37</div><div class="atomic_symbol">Rb</div><div class="atomic_name_weight">rubidium<br>85.4678</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">38</div><div class="atomic_symbol">Sr</div><div class="atomic_name_weight">strontium<br>87.62</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">39</div><div class="atomic_symbol">Y</div><div class="atomic_name_weight">yttrium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">40</div><div class="atomic_symbol">Zr</div><div class="atomic_name_weight">zirconium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">41</div><div class="atomic_symbol">Nb</div><div class="atomic_name_weight">niobium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">42</div><div class="atomic_symbol">Mo</div><div class="atomic_name_weight">molybdenum<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">43</div><div class="atomic_symbol">Tc</div><div class="atomic_name_weight">technetium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">44</div><div class="atomic_symbol">Ru</div><div class="atomic_name_weight">ruthenium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">45</div><div class="atomic_symbol">Rh</div><div class="atomic_name_weight">rhonium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">46</div><div class="atomic_symbol">Pd</div><div class="atomic_name_weight">palladium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">47</div><div class="atomic_symbol">Ag</div><div class="atomic_name_weight">silver<br>1.008</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">48</div><div class="atomic_symbol">Cd</div><div class="atomic_name_weight">cadmium<br>1.008</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">49</div><div class="atomic_symbol">In</div><div class="atomic_name_weight">indium<br>114.818</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">50</div><div class="atomic_symbol">Sn</div><div class="atomic_name_weight">tin<br>118.71</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">51</div><div class="atomic_symbol">Sb</div><div class="atomic_name_weight">antimony<br>121.76</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">52</div><div class="atomic_symbol">Te</div><div class="atomic_name_weight">tellurium<br>127.6</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">53</div><div class="atomic_symbol">I</div><div class="atomic_name_weight">iodine<br>126.9045</div></div></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">54</div><div class="atomic_symbol">Xe</div><div class="atomic_name_weight">xenon<br>131.293</div></div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period6</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">55</div><div class="atomic_symbol">Cs</div><div class="atomic_name_weight">cesium<br>132.9055</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">56</div><div class="atomic_symbol">Ba</div><div class="atomic_name_weight">barium<br>137.327</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">71</div><div class="atomic_symbol">Lu</div><div class="atomic_name_weight">lutetium<br>174.967</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">72</div><div class="atomic_symbol">Hf</div><div class="atomic_name_weight">hafnium<br>178.49</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">73</div><div class="atomic_symbol">Ta</div><div class="atomic_name_weight">htantalum<br>180.9479</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">74</div><div class="atomic_symbol">W</div><div class="atomic_name_weight">tungsten<br>183.85</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">75</div><div class="atomic_symbol">Re</div><div class="atomic_name_weight">rhenium<br>186.207</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">76</div><div class="atomic_symbol">Os</div><div class="atomic_name_weight">osmium<br>190.23</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">77</div><div class="atomic_symbol">Ir</div><div class="atomic_name_weight">iridium<br>192.22</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">78</div><div class="atomic_symbol">Pt</div><div class="atomic_name_weight">platinum<br>195.08</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">79</div><div class="atomic_symbol">Au</div><div class="atomic_name_weight">gold<br>196.9665</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">80</div><div class="atomic_symbol">Hg</div><div class="atomic_name_weight">mercury<br>200.59</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">81</div><div class="atomic_symbol">Tl</div><div class="atomic_name_weight">thallium<br>204.3833</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">82</div><div class="atomic_symbol">Pb</div><div class="atomic_name_weight">lead<br>207.2</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">83</div><div class="atomic_symbol">Bi</div><div class="atomic_name_weight">bismuth<br>208.9804</div></div></div>
+          <div class = "block"><div class="element Semimetal"><div class="atomic_num">84</div><div class="atomic_symbol">Po</div><div class="atomic_name_weight">polonium<br>209</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">85</div><div class="atomic_symbol">At</div><div class="atomic_name_weight">astatine<br>210</div></div></div>
+          <div class = "block"><div class="element Noble_Gas"><div class="atomic_num">86</div><div class="atomic_symbol">Rn</div><div class="atomic_name_weight">radon<br>222</div></div></div>
+        </div>
+        <div id = "row8">
+          <div class = "block"><div class="period_label">Period7</div></div>
+          <div class = "block"><div class="element Alkali_Metal"><div class="atomic_num">87</div><div class="atomic_symbol">Fr</div><div class="atomic_name_weight">francium<br>223</div></div></div>
+          <div id = "block3"><div class="element Alkaline_Earth"><div class="atomic_num">88</div><div class="atomic_symbol">Ra</div><div class="atomic_name_weight">radium<br>226</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">103</div><div class="atomic_symbol">Lr</div><div class="atomic_name_weight">lawrencium<br>(262)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">104</div><div class="atomic_symbol">Rf</div><div class="atomic_name_weight">rutherfordium<br>(261)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">105</div><div class="atomic_symbol">Db</div><div class="atomic_name_weight">dubnium<br>(262)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">106</div><div class="atomic_symbol">Sg</div><div class="atomic_name_weight">seaborgium<br>(266)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">107</div><div class="atomic_symbol">Bh</div><div class="atomic_name_weight">bohrium<br>(264)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">108</div><div class="atomic_symbol">Hs</div><div class="atomic_name_weight">hassium<br>(269)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">109</div><div class="atomic_symbol">Mt</div><div class="atomic_name_weight">meitnerium<br>(268)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">110</div><div class="atomic_symbol">Ds</div><div class="atomic_name_weight">darmstadtium<br>(269)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">111</div><div class="atomic_symbol">Rg</div><div class="atomic_name_weight">roentgenium<br>(272)</div></div></div>
+          <div class = "block"><div class="element Transition_Metal"><div class="atomic_num">112</div><div class="atomic_symbol">Cn</div><div class="atomic_name_weight">copernicium<br>(277)</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">113</div><div class="atomic_symbol">Uut</div><div class="atomic_name_weight">ununtrium<br>(unknown)</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">114</div><div class="atomic_symbol">Uuq</div><div class="atomic_name_weight">ununquadium<br>(289)</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">115</div><div class="atomic_symbol">Uup</div><div class="atomic_name_weight">ununpentium<br>(unknown)</div></div></div>
+          <div class = "block"><div class="element Basic_Metal"><div class="atomic_num">116</div><div class="atomic_symbol">Uuh</div><div class="atomic_name_weight">ununhexium<br>(298)</div></div></div>
+          <div class = "block"><div class="element Halogen"><div class="atomic_num">117</div><div class="atomic_symbol">Uus</div><div class="atomic_name_weight">ununseptium<br>(unknown)</div></div></div>
+          <div class = "block"><div class="element Noble_Gas bottom_fix"><div class="atomic_num">118</div><div class="atomic_symbol">Uuo</div><div class="atomic_name_weight">ununoctium<br>(unknown)</div></div></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period8</div></div>
+          <div class = "block"></div>
+          <div id = "block3"></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">57</div><div class="atomic_symbol">La</div><div class="atomic_name_weight">lanthanum<br>138.9055</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">58</div><div class="atomic_symbol">Ce</div><div class="atomic_name_weight">cerium<br>140.115</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">59</div><div class="atomic_symbol">Pr</div><div class="atomic_name_weight">praeseodymium<br>140.90765</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">60</div><div class="atomic_symbol">Nd</div><div class="atomic_name_weight">neodynium<br>144.24</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">61</div><div class="atomic_symbol">Pm</div><div class="atomic_name_weight">prometheum<br>144.9127</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">62</div><div class="atomic_symbol">Sm</div><div class="atomic_name_weight">samarium<br>150.36</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">63</div><div class="atomic_symbol">Eu</div><div class="atomic_name_weight">europium<br>151.9655</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">64</div><div class="atomic_symbol">Gd</div><div class="atomic_name_weight">gadolinium<br>157.25</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">65</div><div class="atomic_symbol">Tb</div><div class="atomic_name_weight">terbium<br>158.92534</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">66</div><div class="atomic_symbol">Dy</div><div class="atomic_name_weight">dysprosium<br>167.26</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">67</div><div class="atomic_symbol">Ho</div><div class="atomic_name_weight">holmium<br>164.93032</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">68</div><div class="atomic_symbol">Er</div><div class="atomic_name_weight">erbium<br>167.26</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">69</div><div class="atomic_symbol">Tm</div><div class="atomic_name_weight">thulium<br>168.93421</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">70</div><div class="atomic_symbol">Yb</div><div class="atomic_name_weight">ytterbium<br>173.04</div></div></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+        </div>
+        <div class = "row">
+          <div class = "block"><div class="period_label">Period9</div></div>
+          <div class = "block"></div>
+          <div id = "block3"></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">89</div><div class="atomic_symbol">Ac</div><div class="atomic_name_weight">actinium<br>227.0278</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">90</div><div class="atomic_symbol">Th</div><div class="atomic_name_weight">thorium<br>232.0381</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">91</div><div class="atomic_symbol">Pa</div><div class="atomic_name_weight">protactinium<br>231.03588</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">92</div><div class="atomic_symbol">U</div><div class="atomic_name_weight">uranium<br>238.0289</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">93</div><div class="atomic_symbol">Np</div><div class="atomic_name_weight">neptunium<br>237.0482</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">94</div><div class="atomic_symbol">Pu</div><div class="atomic_name_weight">plutonium<br>244.0642</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">95</div><div class="atomic_symbol">Am</div><div class="atomic_name_weight">americium<br>243.0614</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">96</div><div class="atomic_symbol">Cm</div><div class="atomic_name_weight">curium<br>247.0703</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">97</div><div class="atomic_symbol">Bk</div><div class="atomic_name_weight">berkelium<br>247.0703</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">98</div><div class="atomic_symbol">Cf</div><div class="atomic_name_weight">californium<br>251.0796</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">99</div><div class="atomic_symbol">Es</div><div class="atomic_name_weight">einsteinium<br>(254)</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">100</div><div class="atomic_symbol">Fm</div><div class="atomic_name_weight">fermium<br>257.0951</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">101</div><div class="atomic_symbol">Md</div><div class="atomic_name_weight">mendelevium<br>258.1</div></div></div>
+          <div class = "block"><div class="element Rare_Earth"><div class="atomic_num">102</div><div class="atomic_symbol">No</div><div class="atomic_name_weight">nobelium<br>259.1009</div></div></div>
+          <div class = "block"></div>
+          <div class = "block"></div>
+        </div>
+        <div id="lanthanoids"><p>Lanthanides →</p></div>
+        <div id="actinoids"><p>Actinides →</p></div>
+        <div id="tag"><p>Christopher D Green 2016</p></div>
+        <div id="headline"><p>Periodic Table<br>of Elements</p></div>
+        <div class="key">
+          <div id="example_atomic_num">atomic #</div>
+          <div id="example_atomic_symbol">Ex</div>
+          <div id="example_atomic_name_weight">name<br>atomic mass</div>
+        </div>
+        <div class="color_guide">
+          <div class="Alkali_Metal"><p>Alkali Metal</p></div>
+          <div class="Alkaline_Earth"><p>Alkaline Earth</p></div>
+          <div class="Transition_Metal"><p>Transition Metal</p></div>
+          <div class="Semimetal"><p>Semimetal</p></div>
+          <div class="Basic_Metal"><p>Basic Metal</p></div>
+          <div class="Nonmetal"><p>Nonmetal</p></div>
+          <div class="Halogen"><p>Halogen</p></div>
+          <div class="Noble_Gas"><p>Noble Gas</p></div>
+          <div class="Rare_Earth"><p>Rare Earth</p></div>
+        </div>
+      </div>
+      <!-- <script>
+      $(document).ready(function(){
+          console.log("js script loaded");
+          $(".element").hover(function(){
+            $(this).animate({"height":"150%"},"slow");
+          });
+        });
+      </script> -->
+    </body>
+</html>
